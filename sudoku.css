@@ -1,7 +1,15 @@
 body {
     font-family: arial;
     text-align: center;
-    
+}
+
+#board {
+    width: 450px;
+    height: 450px;
+    background-color: rgba(36, 52, 4, 0.511);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 hr {
@@ -14,44 +22,44 @@ hr {
 
 
 
-.tile{
+div.tile{
     width: 48px;
     height:48px;
-    border: 1px solid black;
+    border: 1pt dotted rgb(255, 255, 255);
     font-size: 20px;
+    border-radius: 5pt;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 #digits  {
     width: 450px;
     height: 50px;
-    background-color: red;
-    margin: 105% auto ;
-    display: flex;
+    margin: 0 auto ;
+    display:inline-flex;
     flex-wrap: wrap;
     color:black;
 }
 
 .number {
-    width: 48px;
-    height:48px;
-    border: 1px solid rgb(0, 0, 0);
+    width: 44px;
+    height:44px;
+    border: 1px dotted rgb(0, 0, 0);
     font-size: 20px;
+    border-radius: 5pt;
+
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
     color:black;
+    margin:2px;
+
 }
-#board {
-    width: 450px;
-    height: 450px;
-    background-color: yellow;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
+
+.number-selected {
+    background-color: pink;
+    
 }

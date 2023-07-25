@@ -35,7 +35,32 @@ function setGame(){
         let number = document.createElement("div");
         number.id= i
         number.innerText = i;
+        number.addEventListener("click", selectNumber);
         number.classList.add("number");
         document.getElementById("digits").appendChild(number);
     }
+
+
+for (let r= 0; r < 9; r++) {
+    console.log(r);
+    for(let c= 0; c < 9; c++) {
+        let tile = document.createElement("div");
+      console.log(c);
+        tile.id= r.toString() + "-" + c.toString();
+        console.log(tile.id);
+        tile.classList.add("tile");
+        document.getElementById("board").append(tile);
+   console.log(tile);
+    }
+
+
+}
+
+function selectNumber() {
+    if (numSelected != null) {
+        numSelected.classList.remove("number-selected");
+    }
+     numSelected = this;
+     numSelected.classList.add("number-selected")
+}
 }
