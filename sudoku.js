@@ -40,6 +40,7 @@ function setGame(){
         document.getElementById("digits").appendChild(number);
     }
 
+//board 9x9
 
 for (let r= 0; r < 9; r++) {
     console.log(r);
@@ -47,13 +48,27 @@ for (let r= 0; r < 9; r++) {
         let tile = document.createElement("div");
       console.log(c);
         tile.id= r.toString() + "-" + c.toString();
+        if (board[r][c] != "-") {
+            tile.innerText = board[r][c];
+            tile.classList.add("tile-start");
+        } 
+         if(r == 2 || r == 5 ) {
+            tile.classList.remove("tile-start");
+
+            tile.classList.add("horizontal-line");
+        }
+         if (c == 2 || c == 5){
+            tile.classList.remove("tile-start");
+
+            tile.classList.add("vertical-line");
+        }
         console.log(tile.id);
-        tile.classList.add("tile");
-        document.getElementById("board").append(tile);
-   console.log(tile);
-    }
-
-
+    
+    tile.addEventListener("click", selectTile);
+    tile.classList.add("tile");
+    document.getElementById("board").append(tile);
+}
+}
 }
 
 function selectNumber() {
@@ -63,4 +78,25 @@ function selectNumber() {
      numSelected = this;
      numSelected.classList.add("number-selected")
 }
+
+function selectTile(){
+    if(numSelected) {
+        if(this.innerText != "" ){
+            return;
+        }
+        //0-0 0-1 3-1
+        let coords = this.id.split("-");
+        let r = parseInt(coords[0]);
+        let c = parseInt(coords[1]);
+        if(solution[r][c] == numSelected.id) {
+            this.innerText = numSelected.id;
+        }
+        else {
+errors += 1;
+document.getElementById("errors").innerText = errors;
+        }
+    }
 }
+
+
+

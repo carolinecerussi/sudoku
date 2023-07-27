@@ -1,15 +1,24 @@
+header{
+    width: 100%;
+    margin-top: 5%;
+    color: rgb(151, 160, 62);
+    
+    ;
+}
+
 body {
-    font-family: arial;
+    font-family: "helvetica";
     text-align: center;
 }
+
 
 #board {
     width: 450px;
     height: 450px;
-    background-color: rgba(36, 52, 4, 0.511);
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+background-color: rgba(149, 210, 174, 0.388);
 }
 
 hr {
@@ -17,21 +26,30 @@ hr {
 }
 
 #errors {
-    color:rgb(229, 62, 62);
+    color:rgb(255, 132, 0);
+}
+
+
+.horizontal-line{
+    border-bottom: 2px solid black;
+}
+
+.vertical-line {
+border-right:2px solid black;
 }
 
 
 
-div.tile{
+.tile{
     width: 48px;
     height:48px;
-    border: 1pt dotted rgb(255, 255, 255);
     font-size: 20px;
-    border-radius: 5pt;
+    border-radius: 3pt;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1pt rgb(15, 15, 15) dotted;
 }
 
 #digits  {
@@ -46,20 +64,28 @@ div.tile{
 .number {
     width: 44px;
     height:44px;
-    border: 1px dotted rgb(0, 0, 0);
     font-size: 20px;
-    border-radius: 5pt;
-
+    border-radius: 5pt;;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
     color:black;
-    margin:2px;
+    margin-top:4%;
+    margin-right: 2;
+    margin-left: 2;;
+    border: 1pt dotted black;
 
 }
+
 
 .number-selected {
-    background-color: pink;
+    background-color: rgba(54, 83, 7, 0.7);
     
 }
+
+.tile-start {
+    background-color: rgba(201, 199, 112, 0.515);
+    color: rgb(32, 140, 104);
+}
+
